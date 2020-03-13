@@ -1,11 +1,11 @@
 Name:            libisoburn
 Version:         1.4.8
-Release:         4
+Release:         5
 Summary:         Library to enables creation and expansion of ISO-9660 filesystems
 License:         GPLv2+
 URL:             http://libburnia-project.org/
 Source0:         http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
-BuildRequires:   libburn-devel >= %{version}, libisofs-devel >= %{version}
+BuildRequires:   libburn-devel >= %{version}, libisofs-devel >= %{version} gdb
 
 %description
 Libisoburn is a frontend for libraries libburn and libisofs which
@@ -137,5 +137,8 @@ fi
 %{_bindir}/xorrisofs
 
 %changelog
+* Fri Mar 13 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.4.8-5
+- Add build requires of gdb
+
 * Tue Mar 3 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.4.8-4
 - Package init
