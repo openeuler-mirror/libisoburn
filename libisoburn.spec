@@ -1,6 +1,6 @@
 Name:            libisoburn
 Version:         1.4.8
-Release:         5
+Release:         6
 Summary:         Library to enables creation and expansion of ISO-9660 filesystems
 License:         GPLv2+
 URL:             http://libburnia-project.org/
@@ -27,8 +27,6 @@ BuildRequires: doxygen, graphviz
 The libisoburn-devel package contains libraries and header files for
 developing applications that use libisoburn.
 
-%package_help
-
 %package -n xorriso
 Summary:         ISO-9660 and Rock Ridge image manipulation tool
 Group:           Applications/Archiving
@@ -36,6 +34,8 @@ URL:             http://scdbackup.sourceforge.net/xorriso_eng.html
 Requires:        %{name} = %{version}-%{release}
 Requires:        kde-filesystem >= 4
 Requires:        chkconfig, coreutils
+Provides:        %{name}-doc = %{version}-%{release}
+Obsoletes:       %{name}-doc < %{version}-%{release}
 
 %description -n xorriso
 Xorriso is a program which copies file objects from POSIX compliant
@@ -120,8 +120,13 @@ fi
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}*.pc
 
-%files help 
+%files -n xorriso
 %doc doc/html/
+%ghost %{_bindir}/mkisofs
+%{_bindir}/osirrox
+%{_bindir}/xorrecord
+%{_bindir}/xorriso
+%{_bindir}/xorrisofs
 %{_mandir}/man1/xorrecord.1*
 %{_mandir}/man1/xorriso.1*
 %{_mandir}/man1/xorrisofs.1*
@@ -129,14 +134,10 @@ fi
 %{_infodir}/xorriso.info*
 %{_infodir}/xorrisofs.info*
 
-%files -n xorriso
-%ghost %{_bindir}/mkisofs
-%{_bindir}/osirrox
-%{_bindir}/xorrecord
-%{_bindir}/xorriso
-%{_bindir}/xorrisofs
-
 %changelog
+* Mon Mar 16 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.4.8-6
+- Add help info to xorriso
+
 * Fri Mar 13 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.4.8-5
 - Add build requires of gdb
 
