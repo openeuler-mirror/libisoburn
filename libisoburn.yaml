@@ -1,4 +1,4 @@
 version_control: git
-src_repo: https://dev.lovelyhq.com/libburnia/libisoburn
-tag_pattern: ^v
+src_repo: git@dev.lovelyhq.com:libburnia/libisoburn.git
+tag_prefix: ^release-
 seperator: .
