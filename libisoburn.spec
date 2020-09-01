@@ -1,6 +1,6 @@
 Name:            libisoburn
 Version:         1.4.8
-Release:         6
+Release:         7
 Summary:         Library to enables creation and expansion of ISO-9660 filesystems
 License:         GPLv2+
 URL:             http://libburnia-project.org/
@@ -106,7 +106,6 @@ if [ $1 = 0 ]; then
   /sbin/install-info --delete %{_infodir}/xorriso.info.gz %{_infodir}/dir || :
   /sbin/install-info --delete %{_infodir}/xorrisofs.info.gz %{_infodir}/dir || :
 
-  %{_sbindir}/alternatives --remove mkisofs %{_bindir}/xorriso
 fi
 
 %files
@@ -135,6 +134,9 @@ fi
 %{_infodir}/xorrisofs.info*
 
 %changelog
+* Tue Sep 1 2020 yangzhuangzhuang <yangzhuangzhuang1@huawei.com> - 1.4.8-7
+- Fix a removal issue of xorriso
+
 * Mon Mar 16 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.4.8-6
 - Add help info to xorriso
 
