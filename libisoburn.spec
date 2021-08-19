@@ -1,11 +1,11 @@
 Name:            libisoburn
 Version:         1.4.8
-Release:         8
+Release:         9
 Summary:         Library to enables creation and expansion of ISO-9660 filesystems
 License:         GPLv2+
 URL:             http://libburnia-project.org/
 Source0:         http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
-BuildRequires:   libburn-devel >= %{version}, libisofs-devel >= %{version} gdb
+BuildRequires:   libburn-devel >= %{version}, libisofs-devel >= %{version}
 BuildRequires:   gcc gcc-c++
 
 %description
@@ -135,6 +135,9 @@ fi
 %{_infodir}/xorrisofs.info*
 
 %changelog
+* Wed Aug 04 2021 chenyanpanHW <chenyanpan@huawei.com> - 1.4.8-9
+- DESC: delete BuildRequires gdb
+
 * Mon Jun 28 2021 panxiaohe <panxiaohe@huawei.com> - 1.4.8-8
 - Add gcc and gcc-c++ to BuildRequires
 
