@@ -1,6 +1,6 @@
 Name:            libisoburn
-Version:         1.4.8
-Release:         9
+Version:         1.5.4
+Release:         1
 Summary:         Library to enables creation and expansion of ISO-9660 filesystems
 License:         GPLv2+
 URL:             http://libburnia-project.org/
@@ -133,8 +133,16 @@ fi
 %{_infodir}/xorrecord.info*
 %{_infodir}/xorriso.info*
 %{_infodir}/xorrisofs.info*
+%{_bindir}/xorriso-dd-target
+%{_infodir}/xorriso-dd-target.info*
+%{_infodir}/xorriso-tcltk.info*
+%{_mandir}/man1/xorriso-dd-target.1*
+%{_mandir}/man1/xorriso-tcltk.1*
 
 %changelog
+* Fri Jun 24 2022 dillon chen <dillon.chen@gmail.com> - 1.5.4-1
+- update to 1.5.4
+
 * Wed Aug 04 2021 chenyanpanHW <chenyanpan@huawei.com> - 1.4.8-9
 - DESC: delete BuildRequires gdb
 
